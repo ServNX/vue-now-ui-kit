@@ -7,75 +7,75 @@
     menu-classes="ml-auto"
   >
     <template slot-scope="{ toggle, isToggled }">
-      <router-link v-popover:popover1 class="navbar-brand" to="/">
-        Now Ui Kit
+      <router-link class="navbar-brand" to="/">
+        IndieHD LLC
       </router-link>
-      <el-popover
-        ref="popover1"
-        popper-class="popover"
-        placement="bottom"
-        width="200"
-        trigger="hover"
-      >
-        <div class="popover-body">
-          Designed by Invision. Coded by Creative Tim
-        </div>
-      </el-popover>
     </template>
     <template slot="navbar-menu">
-      <li class="nav-item">
-        <a
-          class="nav-link"
-          href="https://www.creative-tim.com/product/vue-now-ui-kit"
-          target="_blank"
-        >
-          <i class="now-ui-icons arrows-1_cloud-download-93"></i>
-          <p>Download</p>
-        </a>
-      </li>
+
       <drop-down
         tag="li"
-        title="Components"
-        icon="now-ui-icons design_app"
+        title="Music"
+        icon="now-ui-icons media-2_note-03"
         class="nav-item"
       >
-        <nav-link to="/">
-          <i class="now-ui-icons business_chart-pie-36"></i> All components
+        <nav-link to="/browse/most_popular">
+          Most Popular
         </nav-link>
-        <a
-          href="https://demos.creative-tim.com/vue-now-ui-kit/documentation"
-          target="_blank"
-          class="dropdown-item"
-        >
-          <i class="now-ui-icons design_bullet-list-67"></i> Documentation
-        </a>
+        <nav-link to="/browse/trending">
+          Trending
+        </nav-link>
+        <nav-link to="/browse/top_sellers">
+          Top Sellers
+        </nav-link>
+        <nav-link to="/browse/latest">
+          New Releases
+        </nav-link>
       </drop-down>
+
       <drop-down
-              tag="li"
-              title="Examples"
-              icon="now-ui-icons design_image"
-              class="nav-item"
+        tag="li"
+        title="Browse"
+        class="nav-item"
       >
-        <nav-link to="/landing">
-          <i class="now-ui-icons education_paper"></i> Landing
+        <nav-link to="/browse">
+          All
         </nav-link>
-        <nav-link to="/login">
-          <i class="now-ui-icons users_circle-08"></i> Login
+        <nav-link to="/browse/artists">
+          Artists
         </nav-link>
-        <nav-link to="/profile">
-          <i class="now-ui-icons users_single-02"></i> Profile
+        <nav-link to="/browse/albums">
+          Albums
+        </nav-link>
+        <nav-link to="/browse/songs">
+          Songs
         </nav-link>
       </drop-down>
-      <li class="nav-item">
-        <a
-          class="nav-link btn btn-neutral"
-          href="https://www.creative-tim.com/product/vue-now-ui-kit-pro"
-          target="_blank"
-        >
-          <i class="now-ui-icons arrows-1_share-66"></i>
-          <p>Upgrade to PRO</p>
-        </a>
-      </li>
+
+      <drop-down
+        tag="li"
+        title="Popular Genre's"
+        class="nav-item"
+      >
+        <nav-link to="/browse">
+          Rock
+        </nav-link>
+        <nav-link to="/browse/genre/r_and_b">
+          R&B
+        </nav-link>
+        <nav-link to="/browse/genre/rap">
+          RAP
+        </nav-link>
+        <nav-link to="/browse/genre/electronic">
+          Electronic
+        </nav-link>
+        <nav-link to="/browse/genre/country_music">
+          Country Music
+        </nav-link>
+        <nav-link to="/browse/genre/seasonal">
+          Seasonal
+        </nav-link>
+      </drop-down>
 
       <li class="nav-item">
         <a
@@ -83,7 +83,7 @@
           rel="tooltip"
           title="Follow us on Twitter"
           data-placement="bottom"
-          href="https://twitter.com/CreativeTim"
+          href="https://twitter.com/"
           target="_blank"
         >
           <i class="fab fa-twitter"></i>
@@ -96,7 +96,7 @@
           rel="tooltip"
           title="Like us on Facebook"
           data-placement="bottom"
-          href="https://www.facebook.com/CreativeTim"
+          href="https://www.facebook.com/"
           target="_blank"
         >
           <i class="fab fa-facebook-square"></i>
@@ -109,7 +109,7 @@
           rel="tooltip"
           title="Follow us on Instagram"
           data-placement="bottom"
-          href="https://www.instagram.com/CreativeTimOfficial"
+          href="https://www.instagram.com/"
           target="_blank"
         >
           <i class="fab fa-instagram"></i>
@@ -121,22 +121,21 @@
 </template>
 
 <script>
-import { DropDown, NavbarToggleButton, Navbar, NavLink } from '@/components';
-import { Popover } from 'element-ui';
-export default {
-  name: 'main-navbar',
-  props: {
-    transparent: Boolean,
-    colorOnScroll: Number
-  },
-  components: {
-    DropDown,
-    Navbar,
-    NavbarToggleButton,
-    NavLink,
-    [Popover.name]: Popover
-  }
-};
+  import { DropDown, NavbarToggleButton, Navbar, NavLink } from '@/components';
+
+  export default {
+    name: 'main-navbar',
+    props: {
+      transparent: Boolean,
+      colorOnScroll: Number
+    },
+    components: {
+      DropDown,
+      Navbar,
+      NavbarToggleButton,
+      NavLink,
+    }
+  };
 </script>
 
 <style scoped></style>
